@@ -33,7 +33,7 @@ def main(parameter_path, data_file, sheet_name, miss_ratio, n_neighbors, chose_f
     # Save forecast result table: including element column and forecast result column
     # You need to change case data path here
     # td = pd.read_excel(r'Yilgarn_zircon_chem/2.xlsx')
-    td = pd.read_excel(r'Deposit_case_test/kuangchuang  test.xlsx')
+    td = pd.read_excel(r'Deposit_case_test/ore_deposit_test.xlsx')
     if sheet_name=='Igneous Rocks Database':
         result = pd.DataFrame(y_pred)
         tr = pd.concat([td, result], axis=1)
@@ -103,7 +103,7 @@ if __name__ == '__main__':
     # sheet_name_ = 'Igneous Rocks Database' # Change the sheet name
 
     parameter_path_ = r'parameter/RandomForest-Ore Deposits Database-5-0.8-5.pkl'
-    data_file_ = r'Deposit_case_test/kuangchuang  test.xlsx' # You need to change case data path here
+    data_file_ = r'Deposit_case_test/ore_deposit_test.xlsx' # You need to change case data path here
     sheet_name_ = 'Ore Deposits Database' # Change the sheet name
 
     miss_ratio_ = 1
