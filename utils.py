@@ -14,7 +14,7 @@ def plot_confusion_matrix(y_true, y_pred, savename, title, classes):
     np.set_printoptions(precision=2)
 
     cm = confusion_matrix(y_true, y_pred)
-    # 在混淆矩阵中每格的概率值
+    # Calculation of probability value of confusion matrix
     cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
     ind_array = np.arange(len(classes))
     x, y = np.meshgrid(ind_array, ind_array)
@@ -64,7 +64,7 @@ def plot_curve(epoch_list, train_loss, train_acc, test_acc, savename, title):
     plt.savefig('{}.png'.format(savename))
 
 
-class EarlyStopping():  # 提前停止
+class EarlyStopping():  # Early stop
     """Early stops the training if validation loss doesn't improve after a given patience."""
 
     def __init__(self, patience=12, verbose=False, delta=0):
